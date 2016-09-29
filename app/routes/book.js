@@ -23,7 +23,7 @@ function postBook(req, res) {
 }
 
 function getBook(req, res) {
-    Book.findById({_id: req.params.id}, (err, book) => {
+    Book.findById(req.params.id, (err, book) => {
         if (err) {
             res.send(err);
         }
@@ -32,7 +32,7 @@ function getBook(req, res) {
 }
 
 function deleteBook(req, res) {
-    Book.remove({_id: req.params.id}, (err, result) => {
+    Book.remove(req.params.id, (err, result) => {
         if (err) {
             res.send(err);
         }
@@ -41,7 +41,7 @@ function deleteBook(req, res) {
 }
 
 function updateBook(req, res) {
-    Book.findById({_id: req.params.id}, (err, book) => {
+    Book.findById(req.params.id, (err, book) => {
        if (err) {
            res.send(err);
        }
